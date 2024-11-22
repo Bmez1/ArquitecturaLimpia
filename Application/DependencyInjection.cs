@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace Application
 {
@@ -13,7 +11,8 @@ namespace Application
                 .AddMediatR(cfg => cfg
                     .RegisterServicesFromAssembly(assembly)
                 );
-            services.AddValidatorsFromAssembly(assembly);
+
+            services.AddAutoMapper(assembly);
 
             return services;
         }
